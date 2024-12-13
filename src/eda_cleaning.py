@@ -163,20 +163,6 @@ def convert_and_clean_numeric_columns(df):
     return df
 
 
-def add_car_age(df):
-    """
-    Adds a new feature for car age based on the 'Year' column.
-    
-    Args:
-        df (pd.DataFrame): Input DataFrame.
-    Returns:
-        pd.DataFrame: DataFrame with 'Car Age' column added.
-    """
-    if 'Year' in df.columns:
-        df['Car Age'] = 2024 - df['Year']
-        df.drop(columns=['Year'], inplace=True)  # Drop 'Year' after creating 'Car Age'
-    return df
-
 
 
 def remove_outliers(df, column):
@@ -194,38 +180,6 @@ def remove_outliers(df, column):
     IQR = Q3 - Q1
     return df[~((df[column] < (Q1 - 1.5 * IQR)) | (df[column] > (Q3 + 1.5 * IQR)))]
 
-
-def encode_categorical_variables(df):
-    """
-    Encodes categorical variables using one-hot encoding.
-
-    Args:
-        df (pd.DataFrame): Input DataFrame with categorical variables.
-
-    Returns:
-        pd.DataFrame: DataFrame with categorical variables encoded.
-    """
-    categorical_columns = ['Name', 'Fuel Type', 'Transmission', 'Seller Type', 'Owner', 'Drivetrain', 'Location', 'Color']
-    return pd.get_dummies(df, columns=categorical_columns, drop_first=True)
-
-
-
-
-
-def normalize_numerical_features(df, columns):
-    """
-    Normalizes numerical features to have values between 0 and 1.
-    
-    Args:
-        df (pd.DataFrame): Input DataFrame.
-        columns (list): List of columns to normalize.
-    Returns:
-        pd.DataFrame: DataFrame with normalized numerical features.
-    """
-    for column in columns:
-        if column in df.columns:
-            df[column] = (df[column] - df[column].min()) / (df[column].max() - df[column].min())
-    return df
 
 def impute_categorical_values(df):
     """
