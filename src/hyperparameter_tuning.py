@@ -17,6 +17,7 @@ y_train = pd.read_parquet(data_path / "y_train.parquet")
 y_train = y_train.values.ravel()  # Flatten target array
 
 # Log-transform the target variable
+
 y_train_log = np.log1p(y_train)
 
 # General preprocessor for missing values
@@ -61,6 +62,7 @@ glm_search = GridSearchCV(
 # Fit GLM model with hyperparameter tuning
 print("Tuning GLM...")
 glm_search.fit(X_train, y_train_log)
+
 print(f"Best GLM Params: {glm_search.best_params_}")
 print(f"Best GLM MSE: {-glm_search.best_score_}")
 
@@ -77,5 +79,6 @@ lgbm_search = GridSearchCV(
 # Fit LGBM model with hyperparameter tuning
 print("Tuning LGBM...")
 lgbm_search.fit(X_train, y_train_log)
+
 print(f"Best LGBM Params: {lgbm_search.best_params_}")
 print(f"Best LGBM MSE: {-lgbm_search.best_score_}")
