@@ -24,6 +24,7 @@ setup(
         "joblib==1.4.2",
         "pathlib",  # No version needed; part of Python standard library
         "pyarrow",  # Add version if needed
+        "notebook"
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
