@@ -48,7 +48,7 @@ The dataset is preprocessed and split during the pipeline stages for model train
 
 3. Activate the environment:
    ```bash
-   conda activate d100-d400-project
+   conda activate D100-D400_Project
    ```
 
 4. To update the environment (if the environment.yml changes), use:
@@ -65,7 +65,7 @@ The dataset is preprocessed and split during the pipeline stages for model train
   - `raw_data.csv`: Example dataset
 - **notebooks/**: Jupyter Notebooks for analysis
   - `1.EDA_Cleaning.ipynb`: EDA and data cleaning steps
-  - `2.Load and Split.ipynb`: Data loading and splitting
+  - `2.Load_and_Split.ipynb`: Data loading and splitting
 - **src/**: Source code
   - `__init__.py`: Makes `src` a package
   - `EDA.py`: EDA functions
