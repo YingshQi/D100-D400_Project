@@ -96,9 +96,9 @@ jupyter notebook notebooks/1.EDA_Cleaning.ipynb
   - Outliers
   - Irrelevant features
 
-- Then, run the notebook `2.Load and Split.ipynb` to split the data into training and testing sets:
+- Then, run the notebook `2.Load_and_Split.ipynb` to split the data into training and testing sets:
   ```bash
-  jupyter notebook notebooks/2.Load and Split.ipynb
+  jupyter notebook notebooks/2.Load_and_Split.ipynb
   ```
   
 
