@@ -58,6 +58,26 @@ The dataset is preprocessed and split during the pipeline stages for model train
 
 ---
 
+### Installing the Package
+
+1. Navigate to the root directory of the repository, where the `setup.py` file is located:
+   ```bash
+   cd /path/to/D100-D400_Project
+   ```
+
+2. Install the repository as an editable package:
+   ```bash
+   pip install -e .
+   ```
+
+3. Verify the installation by importing the package in Python:
+   ```bash
+   import src
+   ```
+
+
+---
+
 ## Repository Structure
 
 - **data/**: Raw and processed data
