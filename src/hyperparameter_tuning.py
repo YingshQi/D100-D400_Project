@@ -8,7 +8,7 @@ import numpy as np
 from pathlib import Path
 
 # Define paths
-project_root = Path().resolve().parent  # Adjust as needed
+project_root = Path().resolve().parent  
 data_path = project_root / "data"
 
 # Load transformed data
@@ -16,9 +16,6 @@ X_train = pd.read_parquet(data_path / "X_train_transformed.parquet")
 y_train = pd.read_parquet(data_path / "y_train.parquet")
 y_train = y_train.values.ravel()  # Flatten target array
 
-# Log-transform the target variable
-
-y_train_log = np.log1p(y_train)
 
 # General preprocessor for missing values
 preprocessor = SimpleImputer(strategy='mean')
@@ -61,7 +58,7 @@ glm_search = GridSearchCV(
 
 # Fit GLM model with hyperparameter tuning
 print("Tuning GLM...")
-glm_search.fit(X_train, y_train_log)
+glm_search.fit(X_train, y_train)
 
 print(f"Best GLM Params: {glm_search.best_params_}")
 print(f"Best GLM MSE: {-glm_search.best_score_}")
@@ -78,7 +75,7 @@ lgbm_search = GridSearchCV(
 
 # Fit LGBM model with hyperparameter tuning
 print("Tuning LGBM...")
-lgbm_search.fit(X_train, y_train_log)
+lgbm_search.fit(X_train, y_train)
 
 print(f"Best LGBM Params: {lgbm_search.best_params_}")
 print(f"Best LGBM MSE: {-lgbm_search.best_score_}")

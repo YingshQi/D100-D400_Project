@@ -38,7 +38,7 @@ class CustomOneHotEncoder(BaseEstimator, TransformerMixin):
 
 
 
-# Feature Engineering Pipeline
+
 # Feature Engineering Pipeline
 class FeatureEngineeringPipeline(BaseEstimator, TransformerMixin):
     def __init__(self, numerical_features, categorical_features):
@@ -88,7 +88,7 @@ def load_split_data(data_path):
 # Main Script
 def main():
 
-    project_root = Path().resolve().parent  # Adjust this path if necessary
+    project_root = Path().resolve().parent  
     sys.path.append(str(project_root))
     data_path = project_root / "data"
     
